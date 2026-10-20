@@ -1,20 +1,13 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# whosthatcorvid.co.uk
 
-# Run and deploy your AI Studio app
+A simple web page to help you identify corvids!
 
-This contains everything you need to run your app locally.
+Initially vibe coded in Google AI studio as part of a work training.
 
-View your app in AI Studio: https://ai.studio/apps/e0ef666a-4122-4dd7-b839-f9fb494ca03d
+## Deploy to Cloudflare Workers
 
-## Run Locally
+Cloudflare Workers Builds deploys the site automatically when changes are pushed to `main` on GitHub. The site uses Vite and Cloudflare Workers Static Assets; the custom domains are configured in `wrangler.jsonc`.
 
-**Prerequisites:**  Node.js
+Connect the existing `whosthatcorvid` Worker to this GitHub repository from **Workers & Pages → whosthatcorvid → Settings → Builds → Connect**. Set the production branch to `main`, the build command to `npm run build`, and the deploy command to `npx wrangler deploy`. Leave the root directory at the repository root. Workers Builds does not use Wrangler's `build.command` setting.
 
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+After connecting, push commits to `main`; Cloudflare will build and deploy them. Local development still uses `npm run dev`.
